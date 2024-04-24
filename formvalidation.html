@@ -1,0 +1,91 @@
+<html>
+    <head>
+        <style>
+            .errormsg{
+                display:none;
+
+                
+                color:red;
+            }
+            #d1{
+                display:none;
+                color:red;
+            }
+            
+
+        </style>
+        </head>
+        <body>
+            <form onsubmit="checkinput(event)" name="userform">
+            <input type="text" placeholder="Enter the firstname" onblur="checkusername(event)" name="username">
+            <div class="errormsg">Firstname is not valid</div>
+           
+            <br>
+            <input type="password" placeholder="Enter the password" onblur="checkpassword(event)" name="password">
+            <div id="d1">
+                <h4>password is not valid</h4>
+                
+               <li>at least one digit</li> 
+                <li>at leastone lower case</li>
+               <li>at least one upper case</li>
+                <li>at least 8 from the mentioned characters</li>
+            
+            </div>
+            <div class="errormsg"></div>
+             
+           
+            <br>
+            <button>submit</button>
+            </form>
+
+            <script>
+                function checkinput(e){
+                    e.preventDefault();
+                    var y=document.userform.username
+                    console.log(y.value)
+                    
+                  
+
+                }
+                function checkpassword(sl){
+                    
+                    var regexp=/^(?=.*\d)(?=.*[a-zA-Z])[a-zA-Z0-9]{7,}$/
+                   if(!regexp.test(sl.target.value)){
+                    sl.target.nextElementSibling.style.display="block"
+                    console.log("false")
+                 
+                    
+
+                   }
+                   else{
+                    sl.target.nextElementSibling.style.display="none"
+                    console.log("true")
+                   }
+
+                  
+
+
+                }
+                function checkusername(el){
+
+                    var regexp=/^[a-zA-Z\-]+$/;
+                     var res=regexp.test(el.target.value)
+                     console.log(res)
+                     if(res===false){
+                        el.target.nextElementSibling.style.display="block"
+                     }
+                     else{
+                        el.target.nextElementSibling.style.display="none"
+
+                     }
+
+
+
+                }
+               
+              
+
+            </script>
+        </body>
+    
+</html>

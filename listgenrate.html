@@ -1,0 +1,43 @@
+<html>
+    <head></head>
+    <body>
+        <input type="text" id="d1">
+        <button onclick="add()">add the names</button>
+        
+        <script>
+            var names=["jaggu","babi","suri"]
+            var a=document.createElement("ul")
+            document.body.appendChild(a)
+            function show()
+            {
+            a.innerHTML=""
+            names.forEach(function(b,i){
+            var x=document.createElement("li")
+            x.innerHTML=b
+
+            var butn=document.createElement("button")
+            butn.innerHTML="DELETE"
+            x.appendChild(butn)
+            butn.onclick=function ab(){
+                names.splice(i,1)
+                show()
+            }
+           
+
+
+            a.appendChild(x)
+            
+            })
+        }
+        show()
+            function add(){
+                var val=document.getElementById("d1").value
+                names.push(val)
+                show()
+                console.log(names)
+            }
+
+            
+        </script>
+    </body>
+</html>

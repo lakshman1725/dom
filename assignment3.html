@@ -1,0 +1,72 @@
+<html>
+    <head></head>
+    <body>
+        <ul id="d4">
+
+        </ul>
+        <ol id="d5" >
+
+        </ol>
+        <h1 id="d2">Hello DOM World!</h1>
+
+
+
+        <h1 id="d1">Hello</h1>
+        <p >edupoly</p>
+        <p >training</p>
+        <p >something</p>
+
+        <ul id="s1">
+          <li>Apple</li>
+          <li>Mango</li>
+          <li>Orange</li>
+       </ul>
+    </body>
+    <script>
+        var a=document.createElement("h1")
+
+       a. innerHTML= "hello"
+       document.getElementById("d1").appendChild(a)
+       console.dir(a)
+
+       var b=document.createElement("h1")
+       b.innerHTML="Hello DOM World!"
+       b.style.color="yellow"
+       document.getElementById("d2").appendChild(b)
+
+       var c=["ramesh","suresh","kumar","raju"]
+       c.forEach(function(names){
+        var d=document.createElement("li")
+      d.innerHTML=names
+      document.getElementById("d4").appendChild(d)
+
+      
+        
+
+
+       })
+       var e=["11","12","13","14","15","16"]
+      e.forEach(function(s){
+        var ja=document.createElement("li")
+        ja.innerHTML=s
+        document.getElementById("d5").appendChild(ja)
+
+
+      })
+
+      var arr=[]
+      var nli=document.querySelectorAll("li")
+       nli.forEach(function(a){
+        arr.push(a.innerHTML)
+
+       })
+       console.log(arr)
+      
+      
+        
+
+</script>
+
+
+
+</html>

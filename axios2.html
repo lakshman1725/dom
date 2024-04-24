@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+
+    </head>
+    <body>
+        <table border="2px solid" style="color: red;background-color: yellow;"
+
+        >
+            <thead>
+                
+                    <th>Id</th>
+                    <th>Category</th>
+                    <th>Description</th>
+                    <th>Image</th>
+                    <th>Price</th>
+                    <th>Rating</th>
+                    <th>Tittle</th>
+
+            
+
+            </thead>
+            <tbody id="d1">
+
+            </tbody>
+
+        </table>
+
+        <script>
+            var newtb;
+            axios.get("https://fakestoreapi.com/products").then(function(res){
+                console.log(res.data)
+                newtb=res.data
+                console.log(newtb)
+                klm()
+
+            })
+            function klm(){
+                newtb.forEach(function(a){
+                    var b=document.createElement("tr")
+                    var c=document.createElement("td")
+                    c.innerHTML=a.id
+                    b.appendChild(c)
+                   
+                    var c1=document.createElement("td")
+                    c1.innerHTML=a.category
+                    b.appendChild(c1)
+                    
+                    var c2=document.createElement("td")
+                    c2.innerHTML=a.description
+                    b.appendChild(c2)
+                    
+                    var c3=document.createElement("td")
+                    var c4=document.createElement("img")
+                    c4.style.width="100%"
+                    c4.src=a.image
+                    c3.appendChild(c4)
+                    b.appendChild(c3)
+                     
+                    var c5=document.createElement("td")
+                    c5.innerHTML=a.price
+                    b.appendChild(c5)
+
+                    var c6=document.createElement("td")
+                    c6.innerHTML=a.rating.rate
+                    b.appendChild(c6)
+
+                    var c7=document.createElement("td")
+                    c7.innerHTML=a.title
+                    b.appendChild(c7)
+
+                    document.getElementById("d1").appendChild(b)
+                    
+                })
+               
+
+
+            }
+        </script>
+        
+    </body>
+</html>

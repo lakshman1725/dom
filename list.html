@@ -1,0 +1,30 @@
+<html>
+    <head></head>
+    <body>
+        <ul id="d1"></ul>
+
+
+        <script>
+            var empolyees=["ram","lakshman","raju","ganesh","hanuman","shiva"]
+            empolyees.forEach(function(s,i) {
+                var bli =document.createElement("li")
+                bli.innerHTML=s
+
+                var butn=document.createElement("button")
+                butn.innerHTML="delete"
+                bli.appendChild(butn)
+
+                bli.onclick=function(){
+                    alert("hiiiiii")
+                    alert(i)
+                }
+
+
+                document.getElementById("d1").appendChild(bli)
+
+
+                
+            });
+        </script>
+    </body>
+</html>

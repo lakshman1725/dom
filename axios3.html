@@ -1,0 +1,144 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+      
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" 
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+      </head>
+    <body style="background-color: aqua;">
+      <div class="d-flex" >
+        <div  style="width: 15%; background-color: #e77809;color: hsl(0, 11%, 93%);" id="d1" > </div>
+        <div class="d-flex flex-wrap" style="width: 50%;" id="d2"></div>
+        <div id="d3" style="width: 30%;"></div>
+      </div>
+        <script>
+          var a;
+          var d;
+          var z;
+          var e;
+          axios.get("https://fakestoreapi.in/api/products/category").then(function(resp){
+
+            console.log(resp.data.categories)
+            a=(resp.data.categories)
+            category()
+
+
+          }) 
+          function category(){
+            a.forEach(function(b){
+              var cli=document.createElement("ul")
+              cli.style.padding="30px"
+              cli.innerHTML=b
+              cli.style.textDecoration="underline"
+              document.getElementById("d1").appendChild(cli)
+              cli.onclick=function(){
+                axios.get("https://fakestoreapi.in/api/products/category?type="+b).then(function(resp){
+                  console.log(resp)
+                 d= resp.data.products
+                 mmm()
+
+                })
+
+              }
+            })
+
+          }
+          function mmm(){
+            document.getElementById("d2").innerHTML=""
+            d.forEach(function(e){
+              var x=document.createElement("div")
+             x. style="color: hwb(268 2% 49%);background-color:lightgreen;"
+              x.style.width="30%"
+              x.style.border="2px solid"
+              x.style.margin="4px"
+              x.style.cellpadding="200px"
+              x.style.textAlign="center"
+              var yim=document.createElement("img")
+              yim.src=e.image
+              yim.style.width="50%"
+              
+              x.appendChild(yim)
+              document.getElementById("d2").appendChild(x)
+
+              var br=document.createElement("h6")
+              br.innerHTML= "Brand:"+e.brand
+              x.appendChild(br)
+
+             
+              var mo=document.createElement("p")
+              mo.innerHTML= "Model:"+e.model
+              mo.className="text-truncate"
+              x.appendChild(mo)
+
+              var pr=document.createElement("p")
+              pr.innerHTML="Price:"+e.price
+              x.appendChild(pr)
+
+              var ds=document.createElement("p")
+              ds.className="text-truncate"
+              ds.innerHTML="Description:"+e.description
+            
+             
+              x.appendChild(ds)
+              
+              x.onclick=function(){
+        
+                axios.get("https://fakestoreapi.in/api/products/"+e.id).then(function(resp){
+                  console.log(resp.data.product)
+                  z=resp.data.product
+                  sss()
+
+                })
+
+              }
+
+
+              
+            })
+          }
+          function sss(){
+            document.getElementById("d3").innerHTML=""
+            var k=document.createElement("div")
+            k. style="color:red;background-color:yellow;"
+              k.style.width="100%"
+              k.style.border="2px solid"
+              k.style.marginTop="75px"
+              k.style.cellpadding="600px"
+              k.style.textAlign="center"
+              var sim=document.createElement("img")
+              sim.src=z.image
+              sim.style.width="50%"
+              k.appendChild(sim)
+              
+              var sl=document.createElement("h6")
+              sl.innerHTML= "Brand:"+z.brand
+              k.appendChild(sl)
+
+              var ys=document.createElement("p")
+              ys.innerHTML= "Model:"+z.model
+              ys.className="text-truncate"
+              k.appendChild(ys)
+
+              var kl=document.createElement("p")
+              kl.innerHTML="Price:"+z.price
+              k.appendChild(kl)
+
+              var de=document.createElement("p")
+              de.className="text-truncate"
+              de.innerHTML="Description:"+z.description
+              k.appendChild(de)
+
+              
+              document.getElementById("d3").appendChild(k)
+            
+
+            
+
+            }
+
+          
+          
+            
+        </script>
+    </body>
+</html>

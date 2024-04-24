@@ -1,0 +1,26 @@
+<html>
+    <head> 
+        <style>
+            #d1{
+                width:500px;
+                height : 400px;
+                border:2px solid red;
+
+            }
+            
+        </style>
+    </head>
+        <body>
+
+            <div id="d1" onclick="klm(event)"></div>
+            <h1 id="d2"></h1>
+
+            <script>
+            function klm(e){
+                    // document.getElementById("d2").innerHTML=e.clientX +","+e.clientY
+                    document.getElementById("d2").innerHTML=e.offsetX +","+e.offsetY
+                }
+            </script>
+        </body>
+    
+</html>

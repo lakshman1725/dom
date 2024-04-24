@@ -1,0 +1,50 @@
+<html>
+    <head></head>
+    <body>
+        <ul id="e1" type="square" style=" background-color:powderblue;" >
+
+        </ul>
+        <ol id="e2" type="A">
+
+        </ol>
+        <ul id="e3" type="circle">
+
+        </ul>
+        <ol id="e4" type="i">
+
+        </ol>
+    </body>
+    <script>
+        var fruits=["Apple","Mango","Orange"]
+        for(var i=0;i<=fruits.length-1;i++){
+            var newli=document.createElement('li')
+            newli.innerHTML=fruits[i]
+            newli.style.color="red"
+            document.getElementById('e1').appendChild(newli)
+           
+            console.log(newli)
+        }
+        var names=["sitha","ram","lakshman","bharth"]
+        for(var i=0;i<=names.length-1;i++){
+            var newli=document.createElement("li")
+            newli.innerHTML=names[i]
+            newli.style.color="green"
+
+            document.getElementById('e2').appendChild(newli)
+        }
+
+        var vegetables=["potato","onions","brinjal","ladysfingure"]
+        for(var a=0;a<=vegetables.length-1;a++){
+            var newli=document.createElement("li")
+            newli.innerHTML=vegetables[a]
+            newli.style.color="orange"
+            document.getElementById("e3").appendChild(newli)
+        }
+        var kirana=["sugar","chillipowder","toor dal","orid dall"]
+        for(var b=0;b<=kirana.length-1;b++){
+            var newli=document.createElement()
+        }
+
+
+    </script>
+</html>

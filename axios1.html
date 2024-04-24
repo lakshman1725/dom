@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <ul id="d1"></ul>
+        <script>
+            var a;
+        axios.get("https://dog.ceo/api/breeds/list/all").then(function(resp){
+           console.log(resp.data.message) 
+           
+           a=(resp.data.message)
+           console.log(a)  
+           dogslist() 
+        
+        })
+
+          
+        function dogslist(){
+            for(var b in a){
+            var cli=document.createElement("li")
+            cli.innerHTML=b
+            cli.style.color="red"
+            cli.style.backgroundColor="black"
+             var dol=document.createElement("ol")
+            a[b].forEach(function(e){
+                var fli=document.createElement("li")
+                fli.innerHTML=e
+                dol.appendChild(fli)
+                dol.style.color="green"
+                dol.style.backgroundColor="yellow"
+
+            })
+            cli.appendChild(dol)
+            document.querySelector("#d1").appendChild(cli)
+            
+
+           }
+         }
+
+       
+    </script>
+    </body>
+</html>

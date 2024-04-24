@@ -1,0 +1,24 @@
+<html>
+    <head></head>
+    <body>
+        <div id="d1" style="width: 300px;border: 1px soild;height: 200px;"></div>
+
+
+        <script>
+             var a=["red","blue","green","black","yellow","white","orange","purple","skyblue"]
+                a.forEach(function(b){
+                    var butn=document.createElement("button")
+                    butn.innerHTML=b
+                    butn.style.width="70px"
+                    butn.style.margin="5px"
+                    butn.style.marginTop="15px"
+                    document.body.appendChild(butn)
+                    butn.onclick=function abcd(){
+                        var y=document.getElementById("d1")
+                        y.style.backgroundColor=b
+                    }
+                })
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,113 @@
+<html>
+    <head>
+
+    </head>
+    <body style="background: #dfdb7fc9;">
+        <input type="text" id="d1" onfocus="lll(event)">
+        <button onclick="add()" onfocus="fff(event)">add names</button>
+        <div id="d3"></div>
+        <script>
+            var names=[ ]
+            
+            function show(){
+                document.getElementById("d3").innerHTML=""
+               
+                names.forEach(function(a){ 
+                    var x=document.createElement("li")
+                    x.innerHTML=a
+                    document.getElementById("d3").appendChild(x)
+
+            var butn=document.createElement("button")
+            butn.innerHTML="edit"
+            butn.style.color="red"
+            butn.style.backgroundColor="yellow"
+            x.appendChild(butn)
+            butn.onclick=function ab(d){
+                document.getElementById("d1").appendChild(d)
+               
+               
+            }
+           
+            
+             
+            var butn=document.createElement("button")
+            butn.innerHTML="done"
+            butn.style.color="red"
+            butn.style.backgroundColor="yellow"
+            butn.style.margin="20px"
+            butn.onclick=function kl(e){
+                x.style.color="blue"
+                console.dir(e.target)
+                e.target.previousSibling.style.display="none"
+                e.target.style.display="none"
+               
+
+
+                var c=document.createElement("button")
+                c.innerHTML="delete"
+                c.style.color="red"
+            c.style.backgroundColor="yellow"
+                x.appendChild(c)
+                c.onclick=function dd(k){
+                    console.dir(k.target)
+                    k.target.parentElement.style.display="none"
+
+
+                }
+
+                
+               
+            }
+            x.appendChild(butn)
+
+                })
+            }
+            
+            function add(){
+
+                var c=document.getElementById("d1").value
+                names.push(c)
+                show()
+                console.log(names)
+                
+
+            }
+            function lll(v){
+                v.target.style.outline="0px"
+                v.target.style.border="0px"
+                v.target.padding="30px"
+                v.target.margin="20px"
+
+                v.target.style.borderBottom="2px solid blue"
+                v.target.style.width="20%"
+               
+
+            }
+            function fff(e){
+                e.target.style.outline="0px"
+                e.target.padding="30px"
+               
+                e.target.style.border="2px solid blue"
+                 
+              
+                
+               
+
+            }
+            function kkk(s){
+                s.target.style.outline="0px"
+                s.target.style.border="0px"
+                s.target.style.borderBottom="2px solid red"
+                s .target.padding="30px"
+                 
+                s.target.style.width="10%"
+                
+               
+
+            }
+
+
+
+        </script>
+    </body>
+</html>
